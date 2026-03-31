@@ -5,11 +5,26 @@
   width: 100%;
 }
 
+.headerContent,
+.contentContainer,
+.footerContent {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
 .siteHeader {
   background-color: #09212a;
   color: white;
 }
-
+.headerContent {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
 .logoArea img {
   height: 64px;
   width: auto;
@@ -88,23 +103,6 @@
   color: white;
 }
 
-.headerContent,
-.contentContainer,
-.footerContent {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
-
-.headerContent {
-  min-height: 88px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
 .contentContainer {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -115,4 +113,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.footerContent a {
+  color: white;
+  font-size: 0.95rem;
+}
+
+.footerContent a:hover {
+  color: #eab308;
 }
