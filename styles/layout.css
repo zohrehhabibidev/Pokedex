@@ -11,9 +11,72 @@
 }
 
 .logoArea img {
-  height: 150px;
+  height: 64px;
   width: auto;
   display: block;
+}
+
+.headerContent {
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.siteTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.searchArea {
+  margin-left: auto;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.searchInput {
+  width: 240px;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #facc15;
+}
+
+/* BUTTON */
+.searchBtn {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background-color: #facc15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background-color: #eab308;
+}
+
+/* ICON */
+.searchBtn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  cursor: pointer;
 }
 
 .siteMain {
