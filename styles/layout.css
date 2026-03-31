@@ -10,6 +10,12 @@
   color: white;
 }
 
+.logoArea img {
+  height: 150px;
+  width: auto;
+  display: block;
+}
+
 .siteMain {
   background-color: #f5f7fa;
 }
