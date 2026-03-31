@@ -1,1 +1,45 @@
 /* media queries */
+@media (max-width: 600px) {
+  body {
+  overflow-x: hidden;
+}
+  .headerContent {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .siteTitle {
+    font-size: 1.8rem;
+    margin-right: 20px;
+  }
+
+  .searchArea {
+    width: 100%;
+  }
+
+  .searchForm {
+    width: 100%;
+    gap: 6px;
+  }
+
+  .searchBtn{
+    border-radius: 80%;
+  }
+
+  .searchBtn img{
+    width: 15px;
+    height: auto;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+
+  .logoArea img {
+    height: 48px;
+  }
+}
