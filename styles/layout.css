@@ -1,1 +1,49 @@
 /* header, main, footer, container, spacing */
+.siteHeader,
+.siteMain,
+.siteFooter {
+  width: 100%;
+}
+
+.siteHeader {
+  background-color: #09212a;
+  color: white;
+}
+
+.siteMain {
+  background-color: #f5f7fa;
+}
+
+.siteFooter {
+  background-color: #09212a;
+  color: white;
+}
+
+.headerContent,
+.contentContainer,
+.footerContent {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.headerContent {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.contentContainer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.footerContent {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
