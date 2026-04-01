@@ -1,5 +1,6 @@
 // What is State?
 // State means the current situation of the app.
+// Data that the program should remember
 // - What data do we have? چه داده‌ای داریم؟
 // - Where is that data stored? آن داده کجا نگه‌داری می‌شود؟
 // - When does it change? چه موقع تغییر می‌کند؟
@@ -24,39 +25,11 @@
 
 
 //TODO
-// only made states for getting the Pokémon list
+// This is the application state that holds the loaded data
 let loadedPokemons = [];
-let isLoading = false; // async controller
 let currentOffset = 0;
 let limit = 20;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let isLoading = false; // async controller
 
 // let selectedPokemon = 0;
 // let currentPokemonIndex = 0;
