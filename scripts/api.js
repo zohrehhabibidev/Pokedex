@@ -21,6 +21,7 @@ async function getPokemonsData() {
   }
 
   isLoading = false
+  renderPokemonCard();
 }
 
 getPokemonsData()

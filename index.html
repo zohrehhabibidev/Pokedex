@@ -23,6 +23,8 @@
 
     <script src="scripts/state.js" defer></script>
     <script src="scripts/api.js" defer></script>
+    <script src="scripts/templates.js" defer></script>
+    <script src="scripts/render.js" defer></script>
   </head>
   <body>
     <div id="dialogRoot"></div>
@@ -52,9 +54,11 @@
     <main class="siteMain">
       <section class="pokedexSection">
         <div class="contentContainer">
-          <div id="stateMessage"></div>
-          <div id="pokemonGrid"></div>
-          <div id="loadMoreContainer"></div>
+          <div id="stateMessage">
+            <!-- Loading... No results or Error message -->
+          </div>
+          <div id="pokemonGrid"><!-- Pokémon cards --></div>
+          <div id="loadMoreContainer"><!-- Load more btn / spinner--></div>
         </div>
       </section>
     </main>
