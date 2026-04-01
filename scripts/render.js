@@ -1,7 +1,10 @@
 // render logic
 let PokemonCardContainer = document.getElementById('pokemonGrid');
-function renderPokemonCard() {
+function renderPokemonCards() {
+  // Create an empty string to collect all card HTML, then render everything at once
+  let cardsCollect = "";
   for (let index = 0; index < loadedPokemons.length; index++) {
-    PokemonCardContainer.innerHTML += createPokemonCard(loadedPokemons[index]);
+    cardsCollect += createPokemonCard(loadedPokemons[index]);
   }
+  PokemonCardContainer.innerHTML = cardsCollect;
 }
