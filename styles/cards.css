@@ -1,15 +1,21 @@
 /* small cards + grid-related card styles */
-.pokemonCard{
-display: flex;
-flex-direction: column;
-width: 300px;
-height: 300px;
-background-color: rgb(231, 226, 174);
-gap: 10px;
-border-radius: 5px;
+.pokemonCard {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(231, 226, 174);
+  gap: 10px;
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  align-items: center;
+}
+.pokemonCard:hover {
+  transform: translateY(-5px) scale(1.02);
 }
 
-#pokemonGrid{
+#pokemonGrid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -21,4 +27,29 @@ border-radius: 5px;
 .pokemonCard img {
   width: 150px;
   height: auto;
+}
+
+/* grass → green
+fire → orange
+water → blue */
+/* 135deg = movement of colors */
+/* linear-gradient = Slowly turn one color into another. */
+.pokemonCard.grass {
+  background: linear-gradient(135deg, #4caf50, #a5d6a7);
+}
+
+.pokemonCard.fire {
+  background: linear-gradient(135deg, #ef5350, #ffab91);
+}
+
+.pokemonCard.water {
+  background: linear-gradient(135deg, #42a5f5, #90caf9);
+}
+
+.pokemonCard.bug {
+  background: linear-gradient(135deg, #8bc34a, #c5e1a5);
+}
+
+.pokemonCard.normal {
+  background: linear-gradient(135deg, #bdbdbd, #eeeeee);
 }
