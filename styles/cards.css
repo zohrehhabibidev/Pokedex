@@ -1,1 +1,19 @@
 /* small cards + grid-related card styles */
+.pokemonCard{
+display: flex;
+flex-direction: column;
+width: 300px;
+height: 300px;
+background-color: rgb(231, 226, 174);
+gap: 10px;
+border-radius: 5px;
+}
+
+#pokemonGrid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}

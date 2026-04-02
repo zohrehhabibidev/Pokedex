@@ -1,27 +1,57 @@
-//API logic
-// fetch functions
-async function getPokemonsData() {
-  //Dynamic URL for load more
-  const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`
+// ===============================
+// API LOGIC
+// ===============================
 
-  isLoading = true
+// Fetch Pokémon LIST (only name + url)
+async function getPokemonsData() {
+
+  // Build dynamic URL for pagination (limit + offset)
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`;
+
+  // Set loading state → prevents multiple requests
+  isLoading = true;
 
   try {
-    //Go get data from the API and Wait for the server to respond
-    const response = await fetch(url)
-    //Convert answers into usable data
-    const pokemonJsonData = await response.json()
+    // Step 1: Request data from API
+    const response = await fetch(url);
 
-    //Just take the list of Pokémon and save it into state.
-    loadedPokemons = pokemonJsonData.results
+    // Step 2: Convert response to JSON
+    const pokemonJsonData = await response.json();
+
+    // Step 3: Store ONLY basic data (name + url) into state
+    loadedPokemons = pokemonJsonData.results;
     console.log(loadedPokemons);
-    console.log(isLoading);
-  } catch (error) {
-    console.warn(error)
-  }
 
-  isLoading = false
+  } catch (error) {
+    // Handle errors (network, server, etc.)
+    console.warn(error);
+  }
+  // Reset loading state after request is done
+  isLoading = false;
+
+  // With await:
+  // the code WAITS until all images are fetched
+  await getPokemonsImage();
+}
+getPokemonsData();
+
+
+// ===============================
+// FETCH DETAIL DATA (image, etc.)
+// ===============================
+
+async function getPokemonsImage() {
+
+  // Loop through all loaded Pokémon
+  for (let index = 0; index < loadedPokemons.length; index++) {
+
+    // Fetch detail endpoint for each Pokémon
+    const response = await fetch(loadedPokemons[index].url);
+    const pokemonJsonImg = await response.json();
+
+    // Extract image URL and attach it to the SAME Pokémon object
+    loadedPokemons[index].imageUrl =
+      pokemonJsonImg.sprites.other["official-artwork"].front_default;
+  }
   renderPokemonCards();
 }
-
-getPokemonsData()
