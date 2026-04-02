@@ -17,3 +17,8 @@ border-radius: 5px;
   align-items: center;
   justify-content: center;
 }
+
+.pokemonCard img {
+  width: 150px;
+  height: auto;
+}

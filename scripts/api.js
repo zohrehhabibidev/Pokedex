@@ -50,8 +50,26 @@ async function getPokemonsImage() {
     const pokemonJsonImg = await response.json();
 
     // Extract image URL and attach it to the SAME Pokémon object
-    loadedPokemons[index].imageUrl =
-      pokemonJsonImg.sprites.other["official-artwork"].front_default;
+    loadedPokemons[index].imageUrl = pokemonJsonImg.sprites.other["official-artwork"].front_default;
+    //Pokemon type is a seprate array
+    //     "types": [
+    // {
+    // "slot": 1,
+    // "type": {
+    // "name": "grass",
+    // "url": "https://pokeapi.co/api/v2/type/12/"
+    // }
+    // },
+    // {
+    // "slot": 2,
+    // "type": {
+    // "name": "poison",
+    // "url": "https://pokeapi.co/api/v2/type/4/"
+    // }
+    // }
+    // ],
+
+    loadedPokemons[index].type = pokemonJsonImg.types[0].type.name;
   }
   renderPokemonCards();
 }
