@@ -73,3 +73,27 @@ async function getPokemonsImage() {
   }
   renderPokemonCards();
 }
+
+
+async function loadMorePokemon() {
+  currentOffset += limit;
+  const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`;
+
+  isLoading = true;
+
+  try {
+    const responseUrl = await fetch(url);
+    const pokemonJsonNewData = await responseUrl.json();//results
+
+    for (let i = 0; i < pokemonJsonNewData.results.length; i++) {
+      loadedPokemons.push(pokemonJsonNewData.results[i]);
+    }
+    console.log(loadedPokemons);
+
+  } catch (error) {
+    console.warn(error);
+  }
+
+  isLoading = false;
+  await getPokemonsImage();
+}
